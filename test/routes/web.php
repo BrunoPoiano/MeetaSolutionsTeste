@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\User\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'index'])->name('index');
+Route::get('/storeUsuario', [UserController::class, 'storeUsuario'])->name('storeUsuario');
+Route::get('/updateUsuario/{id}', [UserController::class, 'updateUsuario'])->name('updateUsuario');
+Route::get('/updateUsuarioPassword/{id}', [UserController::class, 'updateUsuarioPassword'])->name('updateUsuarioPassword');
+//Route::resource('user', UserController::class);
