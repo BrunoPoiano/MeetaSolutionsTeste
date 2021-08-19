@@ -22,12 +22,14 @@
                 <tbody>
                     @foreach ($usuarios as $user)
                         <tr>
-                            <td style="font-size: 1.5rem">  {{ $user->name }}</td>
+                            <td style="font-size: 1.5rem"> {{ $user->name }}</td>
                             <td style="font-size: 1.5rem">{{ $user->username }}</td>
                             <td style="font-size: 1.5rem">{{ $user->email }}</td>
                             <td>
-                                <a class="btn btn-warning m-1 btn-lg" href="{{ route('updateUsuario', $user->id) }}">Edit</a>
-                                <a class="btn btn-primary m-1 btn-lg" href="{{ route('updateUsuarioPassword', $user->id) }}">Edit
+                                <a class="btn btn-warning m-1 btn-lg"
+                                    href="{{ route('updateUsuario', $user->id) }}">Edit</a>
+                                <a class="btn btn-primary m-1 btn-lg"
+                                    href="{{ route('updateUsuarioPassword', $user->id) }}">Edit
                                     Password</a>
                                 <form action="{{ route('user.destroy', $user->id) }}" method="post">
                                     @csrf

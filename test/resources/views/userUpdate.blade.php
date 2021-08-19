@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <div class="p-5">
+    <div class="p-5 text-capitalize">
         @if ($usuario)
             <h2 class="text-center p-2">Update User</h2>
 
